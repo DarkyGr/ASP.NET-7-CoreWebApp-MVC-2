@@ -1,7 +1,12 @@
+using ASP.NET_CoreWebApp_MVC_SingalR_Chat_;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Injection Service
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -23,5 +28,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Injection Class
+app.MapHub<ChatHub>("/chat");
 
 app.Run();
