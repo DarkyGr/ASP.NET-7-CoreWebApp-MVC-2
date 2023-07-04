@@ -19,7 +19,7 @@ namespace ASP.NET_CoreWebApp_MVC_SingalR_Chat_.Controllers
 
         public IActionResult Room(int room)
         {
-            return View("Roon", room);
+            return View("Room", room);
         }
     }
 }
