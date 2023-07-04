@@ -45,9 +45,16 @@
         event.preventDefault();
     });
 
+    // Show Message
     connection.on("ReceiveMessage", (user, message) => {
         var message = "<div><b>" + user + ":</b> " + message + "</div>";
         document.getElementById("messages").innerHTML = message + document.getElementById("messages").innerHTML;
+    });
+
+    // Show who did connect
+    connection.on("ShowWho", (message) => {
+        var message = "<div><b>" + message + "</b></div>";
+        document.getElementById("notifications").innerHTML = message + document.getElementById("notifications").innerHTML;
     });
 
 </script>
